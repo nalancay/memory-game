@@ -1,4 +1,4 @@
-import { SHUFFLE_CARDS, FLIP_CARD, RESET_CARDS } from "./actions";
+import { TYPES_ACTIONS } from "./actions";
 
 interface Card {
   id: number;
@@ -27,7 +27,7 @@ const shuffleArray = (array: any[]) => {
 
 const rootReducer = (state = initialState, action: any): GameState => {
   switch (action.type) {
-    case SHUFFLE_CARDS:
+    case TYPES_ACTIONS.SHUFFLE_CARDS:
       const cardValues = ["A", "B", "C", "D", "E", "F", "G", "H"];
       let cards = shuffleArray([...cardValues, ...cardValues]).map(
         (value, index) => ({
@@ -39,7 +39,7 @@ const rootReducer = (state = initialState, action: any): GameState => {
       );
       return { ...state, cards, flippedIndices: [] };
 
-    case FLIP_CARD:
+    case TYPES_ACTIONS.FLIP_CARD:
       const { cards: currentCards, flippedIndices } = state;
       const flippedCardIndex = action.payload;
 
@@ -73,7 +73,7 @@ const rootReducer = (state = initialState, action: any): GameState => {
 
       return { ...state, cards: newCards, flippedIndices: newFlippedIndices };
 
-    case RESET_CARDS:
+    case TYPES_ACTIONS.RESET_CARDS:
       return {
         ...state,
         cards: state.cards.map((card) => ({

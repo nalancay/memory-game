@@ -1,16 +1,18 @@
-export const SHUFFLE_CARDS = "SHUFFLE_CARDS";
-export const FLIP_CARD = "FLIP_CARD";
-export const RESET_CARDS = "RESET_CARDS";
+export const TYPES_ACTIONS = {
+  SHUFFLE_CARDS: "SHUFFLE_CARDS",
+  FLIP_CARD: "FLIP_CARD",
+  RESET_CARDS: "RESET_CARDS",
+};
 
 export const shuffleCards = () => ({
-  type: SHUFFLE_CARDS,
+  type: TYPES_ACTIONS.SHUFFLE_CARDS,
 });
 
 export const flipCard = (index: number) => ({
-  type: FLIP_CARD,
+  type: TYPES_ACTIONS.FLIP_CARD,
   payload: index,
 });
 
 export const resetCards = () => ({
-  type: RESET_CARDS,
+  type: TYPES_ACTIONS.RESET_CARDS,
 });
