@@ -19,4 +19,9 @@ export const CardContainer = styled.div<{
     background-color: ${({ isMatched }) =>
       isMatched ? "darkgreen" : "darkblue"};
   }
+
+  @media screen and (max-width: 767px) {
+    width: 70px;
+    height: 90px;
+  }
 `;

@@ -4,5 +4,6 @@ export const Board = styled.div`
   display: flex;
   flex-wrap: wrap;
   max-width: 420px;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 `;
